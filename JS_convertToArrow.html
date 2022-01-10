@@ -53,8 +53,8 @@
         }
 
         const mouseOverFunction = el => {
-            newColor = document.getElementById("color-update").value;
-            el.style = `background-color: ${newColor}`;
+            // newColor = document.getElementById("color-update").value;
+            el.style = `background-color: ${getValueFromId("color-update")}`;
         }
     </script>
 </body>

@@ -25,7 +25,7 @@
         We just like random interactivity in the site, including a fun effect if you hover over <span id="hover-this">
             <b>this.</b></span>
     </p>
-    <p onmouseover="mouseOverFunction(this)">
+    <p id="feature" onmouseover="mouseOverFunction(this)">
         Another task: This should be another feature.
         I want to click anywhere in this paragraph tag and I want to be able to change the background color to whatever
         is in this input: <input type="text" id="color-update"/>.
@@ -52,9 +52,15 @@
             document.getElementById(id).style = "background-color: " + color;
         }
 
+        // get the element from id=feature while click
+        document.getElementById("feature").onclick = () => {
+            // call setBackgroundColor by id and set color by value input
+            setBackgroundColorById("feature", getValueFromId("color-update"))
+        }
+
         const mouseOverFunction = el => {
             // newColor = document.getElementById("color-update").value;
-            el.style = `background-color: ${getValueFromId("color-update")}`;
+            el.style = `background-color: black`;
         }
     </script>
 </body>
